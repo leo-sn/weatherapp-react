@@ -28,7 +28,7 @@ function App() {
         />
         <button 
           type="submit"
-          className='bg-gray-300 p-3 rounded-3xl ml-3 font-bold text-slate-800 shadow-xl'>
+          className='bg-gray-300 p-3 rounded-3xl ml-3 font-bold text-slate-800 shadow-xl hover:bg-gray-400 hover:text-white'>
           Search
         </button>
       </form>

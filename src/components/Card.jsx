@@ -2,11 +2,10 @@ import React from 'react';
 
 function Card({data}) {
 
-    console.log(data)
     const { name } = data;
     const { icon, description } = data.weather[0];
-    const country = data.sys.country
-    const temp = Math.round(data.main.temp);
+    const { sys: {country} } = data
+    const temp = (data.main.temp ? Math.round(data.main.temp) : '');
 
     return(
         <div className='bg-white p-8 mt-7 rounded-lg shadow-xl min-w-[250px]'>
