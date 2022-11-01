@@ -1,12 +1,21 @@
 import React from 'react';
 import Card from './components/Card'
+import fetchData from './services/api'
 
 function App() {
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetchData('Vancouver')
+    .then((resp) => {
+      console.log(resp)
+
+    })
+  }
+
   return (
     <div className="flex flex-col w-full h-screen items-center justify-center"> 
-
-      <form>
+      <form onSubmit={handleSubmit}>
         <input 
           type="text"  
           placeholder="City"
@@ -21,7 +30,5 @@ function App() {
     </div>
   )
 }
-
-// https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}
 
 export default App;
